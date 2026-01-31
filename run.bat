@@ -1,5 +1,5 @@
 @echo off
-set JAVA_HOME=C:\Program Files\Eclipse Adoptium\jdk-17.0.9.9-hotspot
+set JAVA_HOME=C:\Users\gamba\.jdks\corretto-25.0.1
 set PATH=%JAVA_HOME%\bin;%PATH%
 
 echo Starting Spring Integration File Demo...
