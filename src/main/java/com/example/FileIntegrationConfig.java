@@ -24,6 +24,7 @@ public class FileIntegrationConfig {
             .filter("payload.length() > 0")
             .transform(String.class, line -> processLine(line))
             .aggregate()
+            .transform(list -> String.join("\n", (java.util.List<String>) list))
             .handle(Files.outboundAdapter(new File("output"))
                 .fileExistsMode(FileExistsMode.APPEND)
                 .fileNameGenerator(m -> "processed_" + System.currentTimeMillis() + ".txt"))
